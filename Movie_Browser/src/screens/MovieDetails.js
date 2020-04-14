@@ -7,7 +7,6 @@ import { IMAGE_BASE_URL } from '../components/Network/URL'
 export default class MovieDetails extends Component {
     render() {
         const item = this.props.navigation.getParam('item', 'empty')
-        console.log(IMAGE_BASE_URL + item.poster_path)
         return (
             <SafeAreaView style={styles.container}>
                 <ScrollView>

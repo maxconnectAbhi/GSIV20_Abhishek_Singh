@@ -11,9 +11,8 @@ export default class App extends Component {
     };
   }
 
-  globalStateChange = (name, value) => {
-
-  }
+  // globalStateChange = (name, value) => {
+  // }
 
 
   render() {
