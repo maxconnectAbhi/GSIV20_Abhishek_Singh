@@ -2,6 +2,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import MovieList from '../../screens/MovieList';
 import MovieDetails from '../../screens/MovieDetails';
 import { DISABLED, GRAY } from '../common/Constants';
+import { Platform } from 'react-native';
 
 const AppNav = createStackNavigator(
   {
@@ -10,7 +11,9 @@ const AppNav = createStackNavigator(
         header: null,
       }
     },
-    Details: { screen: MovieDetails },
+    Details: { screen: MovieDetails,  navigationOptions: {
+      title: Platform.OS === 'ios' ? "" : "Back",
+    }},
   }, {
   initialRouteName: 'List',
   defaultNavigationOptions: {

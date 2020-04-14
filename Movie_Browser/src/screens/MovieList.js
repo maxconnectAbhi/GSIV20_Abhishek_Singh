@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, FlatList, SafeAreaView, StyleSheet, RefreshControl } from 'react-native'
+import { Text, View, FlatList, SafeAreaView, StyleSheet, RefreshControl, Platform } from 'react-native'
 import { MOVIE_LISTURL, BASE_URL, MOVIE_SEARCH } from '../components/Network/URL'
 import NetInfo from "@react-native-community/netinfo";
 import { SearchBar } from 'react-native-elements';
@@ -35,7 +35,6 @@ export default class MovieList extends Component {
             fetch(url)
                 .then(res => res.json())
                 .then(res => {
-                    console.log(JSON.stringify(res))
                     this.setState({ loading: false, movieList: res.items, isRefresh: false })
                 })
                 .catch((error) => {
@@ -54,7 +53,6 @@ export default class MovieList extends Component {
                 fetch(url)
                     .then(res => res.json())
                     .then(res => {
-                        console.log(JSON.stringify(res))
                         this.setState({ movieList: res.results })
                     })
                     .catch((error) => {
@@ -113,7 +111,7 @@ const styles = StyleSheet.create({
         backgroundColor: BACKGROUND
     },
     emptylistview: {
-        top: verticalScale(200),
+        top: Platform.OS === 'ios' ? verticalScale(200) : 0,
         alignItems: "center",
         justifyContent: "center",
         padding: scale(10)
