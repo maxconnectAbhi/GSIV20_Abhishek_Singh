@@ -5,6 +5,7 @@ a. Instructions about how to run and test my code
 cd GSIV20_Abhishek_Singh
 npm install
 change android sdk path from android/local.properties
+ 
 2. Run App
 for Android - react-native run-android
 for IOS - react-native run-ios
