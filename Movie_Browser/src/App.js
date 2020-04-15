@@ -7,12 +7,15 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      item:''
     };
   }
 
-  // globalStateChange = (name, value) => {
-  // }
+  globalStateChange = (name, value) => {
+    if(name == 'items'){
+    this.setState({item:value})
+    }
+  }
 
 
   render() {
